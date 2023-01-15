@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sentence Finder</title>
+  </head>
+  <body>
+    <form>
+      <label for="sentence">Enter a Sentence:</label>
+      <input type="text" id="sentence" name="sentence">
+      <br><br>
+      <label for="letter">Enter a Letter:</label>
+      <input type="text" id="letter" name="letter">
+      <br><br>
+      <button type="button" onclick="findLetter()">Submit</button>
+    </form>
+    <br>
+    <p id="result"></p>
+    <script>
+      function findLetter() {
+        var sentence = document.getElementById("sentence").value;
+        var letter = document.getElementById("letter").value;
+        var index = sentence.indexOf(letter);
+        if (index === -1) {
+          document.getElementById("result").innerHTML = "The letter does not exist in the sentence";
+        } else {
+          document.getElementById("result").innerHTML = sentence.slice(index + 1);
+        }
+      }
+    </script>
+  </body>
+</html>
